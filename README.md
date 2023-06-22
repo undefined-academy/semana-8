@@ -2,7 +2,7 @@
 
 > 🏕️ [Base de conocimientos.](https://undefinedshell.notion.site/Semana-8-bd17c3e621e747bfa667fc1c40aaf3c3)
 
-Ejercicio de la séptima semana.
+Ejercicio de la octava semana.
 
 ## 🏋 EJERCICIO ##
 
