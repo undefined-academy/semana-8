@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  a(href="/users") Volver a usuarios
+
+  h1 Detalle de Usuario
+  div.flex.flex-col.gap-20
+    div.flex.flex-wrap
+      div.user-data-title
+        strong Nombre:
+      div.user-data
+        span #{user.name}
+    div.flex.flex-wrap
+      div.user-data-title
+        strong Email:
+      div.user-data
+        span #{user.email}
