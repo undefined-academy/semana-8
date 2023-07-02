@@ -1,0 +1,4 @@
+DB_HOST=cluster.abcd.mongodb.net
+DB_NAME=products_db
+DB_USERNAME=juanitoperez
+DB_PASSWORD=qwerty12345
