@@ -1,7 +1,8 @@
 extends layout
 
 block content
-  h1= title
-  p Bienvenido a mi servidor con #{title}. Continúa a la página de "productos" para ver los recursos:
-  button(onclick="window.location.href='/products'") Ir a productos
+  .container
+    h1.my-5= title
+    p.mb-5 Bienvenido a mi servidor con #{title}. Continúa para ver los recursos listados y acceder a sus opciones:
+    button.btn.btn-info(onclick="window.location.href='/products'") Ver productos
 
