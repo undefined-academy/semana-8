@@ -7,7 +7,7 @@ const MONGO_URI = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@ac-d7zwzlz-shar
 
 mongoose
   .connect(MONGO_URI, {
-    dbName: "sample_training",
+    dbName: "data_ejercicios",
     useNewUrlParser: true,
     useUnifiedTopology: true
   })

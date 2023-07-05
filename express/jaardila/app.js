@@ -7,7 +7,7 @@ var database = require("./database.js"); // DB connection, do not  ardila
 
 
 var indexRouter = require('./routes/index');
-var postsRouter = require('./routes/posts.js'); // path route ardila
+var productsRouter = require('./routes/products.js'); // path route ardila
 
 var app = express();
 
@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/posts', postsRouter); // config  ardila
+app.use('/products', productsRouter); // config  ardila
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
