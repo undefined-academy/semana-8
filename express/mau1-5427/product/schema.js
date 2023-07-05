@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { Decimal128 } from "mongoose";
 
 const productSchema = mongoose.Schema( {
   product_id: {
