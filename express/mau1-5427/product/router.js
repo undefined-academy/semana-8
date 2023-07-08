@@ -7,7 +7,7 @@ export const productRouter = express.Router();
 
 // List / READ all
 productRouter.get("/", async (req, res) => {
-  const products = await productModel.find({});
+  const products = await productModel.find({}).limit(10);
 
   res.status(200).json({
     products
