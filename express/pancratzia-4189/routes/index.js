@@ -1,9 +1,32 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const Product = require('../models/product');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+// Listar productos
+router.get('/', async (req, res) => {
+  try {
+    const products = await Product.find();
+    res.render('index', { products });
+  } catch (error) {
+    res.render('error', { error });
+  }
+});
+
+// Mostrar formulario para crear producto
+router.get('/create', (req, res) => {
+  res.render('create');
+});
+
+// Crear producto
+router.post('/', async (req, res) => {
+  try {
+    const { nombre, serial, precio } = req.body;
+    const product = new Product({ nombre, serial, precio });
+    await product.save();
+    res.redirect('/');
+  } catch (error) {
+    res.render('error', { error });
+  }
 });
 
 module.exports = router;

@@ -1,5 +1,17 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 Lista de Productos
+  if products.length
+    ul
+      each product in products
+        li
+          | Serial: #{product.serial}
+          br
+          | #{product.nombre}
+          br
+          | Precio: #{product.precio}$
+  else
+    p No hay productos
+
+  a(href="/create") Crear Producto
