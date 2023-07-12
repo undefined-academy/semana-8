@@ -13,9 +13,8 @@ topicRouter.post("/", async (req, res) => {
   res.status(201).json({ topic: createdTopic });
 });
 
-// Read All blog topic
+// Read All Blog topics
 topicRouter.get("/", async (req, res) => {
-  // mongosse sort desc by date
   const topics = await topicModel.find({}).sort({ date: -1 }).limit(10);
   res.status(200).json({ topics });
 });
@@ -23,7 +22,7 @@ topicRouter.get("/", async (req, res) => {
 // Read a specific topic
 topicRouter.get("/:permalink", async (req, res) => {
   const topic = await topicModel.findOne({ permalink: req.params.permalink });
-  res.status(200).json({ post: topic });
+  res.status(200).json({ topic });
 });
 
 // Update a topic

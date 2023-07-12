@@ -22,4 +22,8 @@ export const topicSchema = mongoose.Schema({
     type: Date,
     required: true,
   },
+  imageUrl: {
+    type: String,
+    require: true
+  }
 });
