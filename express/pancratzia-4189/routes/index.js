@@ -29,4 +29,15 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Eliminar producto
+router.post('/delete/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    await Product.findByIdAndDelete(id);
+    res.redirect('/');
+  } catch (error) {
+    res.render('error', { error });
+  }
+});
+
 module.exports = router;
