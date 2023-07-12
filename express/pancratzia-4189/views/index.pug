@@ -11,7 +11,7 @@ block content
           | #{product.nombre}
           br
           | Precio: #{product.precio}$
-          form(action=`/delete/${product._id}`, method='POST')
+          form(action=`/api/delete/${product._id}`, method='POST')
             button(type='submit' class='btn_submit') X
   else
     p No hay productos

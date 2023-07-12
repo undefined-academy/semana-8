@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../models/product');
 
-// Listar productos
+// Mostrar lista de productos
 router.get('/', async (req, res) => {
   try {
     const products = await Product.find();
@@ -18,7 +18,7 @@ router.get('/create', (req, res) => {
 });
 
 // Crear producto
-router.post('/', async (req, res) => {
+router.post('/api/create', async (req, res) => {
   try {
     const { nombre, serial, precio } = req.body;
     const product = new Product({ nombre, serial, precio });
@@ -30,7 +30,7 @@ router.post('/', async (req, res) => {
 });
 
 // Eliminar producto
-router.post('/delete/:id', async (req, res) => {
+router.post('/api/delete/:id', async (req, res) => {
   try {
     const { id } = req.params;
     await Product.findByIdAndDelete(id);

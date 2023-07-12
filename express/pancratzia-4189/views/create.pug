@@ -3,7 +3,7 @@ extends layout
 block content
   h1 Crear Producto
 
-  form(action="/", method="POST")
+  form(action="/api/create", method="POST")
     label(for="nombre") Nombre:
     input(type="text", name="nombre", required)
     br
