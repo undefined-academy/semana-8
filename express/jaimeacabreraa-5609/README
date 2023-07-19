@@ -1,0 +1,78 @@
+# Documentación del servicio Express para consulta y creación de productos
+
+El servicio de Express proporciona una API para consultar y crear productos. A continuación, se presenta la documentación del servicio en formato markdown.
+
+## Rutas
+
+### Obtener productos
+
+- **Método**: GET
+- **Ruta**: `/products`
+- **Descripción**: Esta ruta permite obtener todos los productos existentes en la base de datos.
+
+**Respuesta exitosa (200 OK)**:
+
+- **Contenido**: Lista de productos en formato JSON.
+
+**Respuesta de error**:
+
+- **Código**: 500 Internal Server Error
+- **Contenido**: `{ "error": "Error al obtener los productos" }`
+
+### Crear producto
+
+- **Método**: POST
+- **Ruta**: `/products`
+- **Descripción**: Esta ruta permite crear un nuevo producto.
+
+**Datos requeridos en el cuerpo de la solicitud**:
+
+```json
+{
+  "code": "Código del producto",
+  "name": "Nombre del producto",
+  "price": "Precio del producto",
+  "qty": "Cantidad del producto",
+  "description": "Descripción del producto"
+}
+```
+
+**Respuesta exitosa (201 Created)**:
+
+- **Contenido**: Producto creado en formato JSON.
+
+**Respuesta de error**:
+
+- **Código**: 400 Bad Request
+- **Contenido**: `{ "error": "Error al crear el producto" }`
+
+## Modelo de datos
+
+El modelo de datos utilizado para representar un producto en la base de datos es el siguiente:
+
+```javascript
+const mongoose = require('mongoose');
+
+const ProductSchema = new mongoose.Schema({
+    code: String,
+    name: String,
+    price: Number,
+    qty: Number,
+    description: String
+});
+
+module.exports = mongoose.model('Products', ProductSchema);
+```
+
+## Configuración de la base de datos
+
+El servicio de Express se conecta a una base de datos MongoDB utilizando los siguientes valores de configuración especificados en el archivo `.env`:
+
+```
+DB_HOST=cluster.abcd.mongodb.net
+DB_NAME=und-acad-db
+DB_USERNAME=user
+DB_PASSWORD=pass1234
+```
+
+El servicio establece una conexión exitosa a la base de datos utilizando los valores de configuración proporcionados.
