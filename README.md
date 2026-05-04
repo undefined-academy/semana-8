@@ -1,4 +1,5 @@
-# ⛺ Semana 8 #
+> # ⚠️ Mira el nuevo repositorio de Undefined Academy en https://github.com/glrodasz/academy
+## ⛺ Semana 8 #
 
 > 🏕️ [Base de conocimientos.](https://undefinedshell.notion.site/Semana-8-bd17c3e621e747bfa667fc1c40aaf3c3)
 
